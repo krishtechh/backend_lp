@@ -6,6 +6,10 @@ const waitlistSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  phoneNumber: {
+    type: String,
+    required: true
+  },
   user_type: {
     type: String,
     enum: ["freelancer", "cofounder", "founder"],
