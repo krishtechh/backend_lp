@@ -8,7 +8,7 @@ const waitlistSchema = new mongoose.Schema({
   },
   phoneNumber: {
     type: String,
-    required: true
+    required: false
   },
   user_type: {
     type: String,

@@ -8,9 +8,9 @@ router.post("/join", async (req, res) => {
 
     const { email, user_type, phoneNumber } = req.body;
 
-    if (!email || !user_type || !phoneNumber) {
+    if (!email || !user_type) {
       return res.status(400).json({
-        message: "Email, user type, and phone number are required"
+        message: "Email and user type are required"
       });
     }
 
