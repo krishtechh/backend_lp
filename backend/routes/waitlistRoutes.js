@@ -30,11 +30,8 @@ router.post("/join", async (req, res) => {
 
     await user.save();
 
-    // REMOVE 'await' here to make it non-blocking
-sendWaitlistEmail(email).catch(err => console.error("Email sending failed:", err));
-res.status(201).json({
-  message: "Added to waitlist"
-});
+    // Send email in the background
+    sendWaitlistEmail(email).catch(err => console.error("Email sending failed:", err));
 
     res.status(201).json({
       message: "Added to waitlist"
