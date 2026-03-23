@@ -10,11 +10,13 @@ const waitlistSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-  user_type: {
-    type: String,
-    enum: ["freelancer", "cofounder", "founder"],
-    required: true
-  },
+  // models/Waitlist.js
+user_type: {
+  type: String,
+  enum: ["freelancer", "cofounder", "founder", "influencer"], // Added influencer and founder
+  required: true
+},
+
   createdAt: {
     type: Date,
     default: Date.now
